@@ -10,7 +10,6 @@ CIAURI_CW2 = "https://prod-94.eastus.logic.azure.com/workflows/b1a3b89189c647bbb
 
 RIA_USERNAME1 = "https://prod-67.eastus.logic.azure.com/workflows/78ce124a9f9940cbaa47999d43c83f00/triggers/manual/paths/invoke/rest/v1/users/"
 RIA_USERNAME2 = "?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Wk1FcqJVq_DYhB3sd7DyoPz2_UYhCCBJJFMqdmn1MTU"
-// RIA_USERNAME3 = "https://prod-67.eastus.logic.azure.com/workflows/78ce124a9f9940cbaa47999d43c83f00/triggers/manual/paths/invoke/rest/v1/users/jmcintyre12/Robbiekeane12?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Wk1FcqJVq_DYhB3sd7DyoPz2_UYhCCBJJFMqdmn1MTU"
 
 RAA_ALL_USERS = "https://prod-89.eastus.logic.azure.com/workflows/0f39396142b746fba166a45c40b8787c/triggers/manual/paths/invoke/rest/v1/users?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2AJ2IsYApuOH8qm7rVXVcdSgPEZQJzqs0HtqjcrTcG0"
 

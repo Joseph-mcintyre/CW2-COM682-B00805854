@@ -1,6 +1,10 @@
 //The URIs of the REST endpoint
 IUPS = "https://prod-48.northeurope.logic.azure.com:443/workflows/2be52a393c814d8991f6364fd229dcda/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5JJ8vJ-6InAWXHqZkqS7r_7gufoJSN0fySCFMDlPHRc";
 
+TRANSLATE_URL = "https://prod-15.eastus.logic.azure.com/workflows/4dd084e6016546eca76c30e9bb375a22/triggers/manual/paths/invoke/rest/v1/users?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vwUq98B2vUizg2ByfGiLNQP1VhUItllTpk_50IqdKfI"
+
+QnA_URL = "https://prod-21.northcentralus.logic.azure.com/workflows/8f9f2ea20ddc4d8db54aabaa20ee9c1e/triggers/manual/paths/invoke/rest/v1/users?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ETEmEjzSoFHPfvlEEzxVpOyPsPdsw_O8cATY4aukn8A"
+
 RAI = "https://prod-02.northeurope.logic.azure.com:443/workflows/34d15fc2035543eebb32bfcd2c58eeb9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=h-vyjVlbcSooR9Hp0IZ_y8iGs0yiCIjYpC0q0AyufhU";
 
 PUT1 = "https://prod-74.eastus.logic.azure.com/workflows/12e19f6a20c340f8b7942f766ff8ec89/triggers/manual/paths/invoke/rest/v1/users/"
@@ -21,12 +25,30 @@ BLOB_ACCOUNT = "https://imgshareb00805854.blob.core.windows.net";
 //Handlers for button clicks
 $(document).ready(function() {
 
+  $("#translateButton").click(function() {
+    var userText = $("#textInput").val(); // Get the text from the input field
+    var translateLanguage = $("#languageSelect").val();
+
+    $.ajax({
+        url: TRANSLATE_URL, 
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ text: userText, language: translateLanguage }), // Send the text to be translated
+        success: function(response) {
+            $("#translatedText").text(response[0].translations[0].text)
+        },
+        error: function(xhr, status, error) {
+            console.log("Error:", error);
+        }
+    });
+});
+
   $('#questionForm').submit(function(event) {
     event.preventDefault();
     var userQuestion = $('#questionInput').val();
 
     $.ajax({
-        url: "https://prod-21.northcentralus.logic.azure.com/workflows/8f9f2ea20ddc4d8db54aabaa20ee9c1e/triggers/manual/paths/invoke/rest/v1/users?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ETEmEjzSoFHPfvlEEzxVpOyPsPdsw_O8cATY4aukn8A", // Replace with your Logic App's HTTP trigger URL
+        url: QnA_URL,
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ question: userQuestion }),
@@ -40,6 +62,8 @@ $(document).ready(function() {
         }
     });
 });
+
+
 
 function displayAnswers(answers) {
     $('#answer').empty();

@@ -1,122 +1,152 @@
 <!doctype html>
 <html lang="en" ng-app="Dashboard">
-  <head>
-    <meta charset="UTF-8">
 
-    <title>Restaurants Around The World</title>
+<head>
+  <meta charset="UTF-8">
 
-      <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
-      <script type="text/javascript" src="JS/bootstrap.js"></script>
-      <script type="text/javascript" src="JS/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
+  <title>Restaurants Around The World</title>
 
-      <script type="text/javascript" src="JS/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+  <script type="text/javascript" src="JS/bootstrap.js"></script>
+  <script type="text/javascript" src="JS/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
 
-  </head>
-  
-  <body>
+  <script type="text/javascript" src="JS/app.js"></script>
 
-    <div  class="container">
+</head>
 
-        <!--Header-->
-        <div class="row align-items-start">
-            <div class="col-2"  ></div>
+<body>
 
-            <div class="col-8" style="text-align: center;">
-              <h3>Restaurants Around The World</h3>
-              
-            </div>
+  <div class="container">
 
-            <div class="col-2"  ></div>
+    <!--Header-->
+    <div class="row align-items-start">
+      <div class="col-2"></div>
 
-            
-        </div>
+      <div class="col-8" style="text-align: center;">
+        <h3>Restaurants Around The World</h3>
 
-        <!--New Asset Box-->
-        <div class="row align-items-start">
-            <div class="col-2"  ></div>
+      </div>
 
-            <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
+      <div class="col-2"></div>
 
-              <form style="font-size: 10pt;" id="newAssetForm">
-                <div class="mb-3">
-                  <label for="FileName" class="form-label">File Name</label>
-                  <input type="text" class="form-control" id="FileName">
-                </div>
-
-                <div class="mb-3">
-                  <label for="restaurant" class="form-label">Where is the Restaurant?</label>
-                  <input type="string" class="form-control" id="restaurant">
-                </div>
-
-                <div class="mb-3">
-                  <label for="desc" class="form-label">Description of your Media</label>
-                  <input type="string" class="form-control" id="desc">
-                </div>
-
-                
-                <div class="mb-3">
-                  <label for="docType">Choose an Upload Type:</label>
-                
-              <select name="fileType" id="fileType">
-                <option value="img">Image</option>
-                <option value="vid">Video</option>
-                <option value="aud">Audio</option>
-              </select>
-            </div>
-
-
-                <div class="mb-3">
-                  <label for="userName" class="form-label">User Name</label>
-                  <input type="text" class="form-control" id="userName">
-                </div>
-
-                <div class="mb-3">
-                  <label for="UpFile" class="form-label">File to Upload</label>
-                  <input type="file" class="form-control" id="UpFile">
-                </div>
-            
-                <button type="button" id="subNewForm" class="btn btn-primary">Submit</button> <br/><br/>
-                
-              </form>
-              <hr style="text-align:center; border-width: 2.5px;">
-              <div class = "QnA" style="text-align: center;">
-                <form id="questionForm">
-                  <label for="questionInput"></label>
-                  <input type="text" id="questionInput" placeholder="Ask a question" required>
-                  <button type="submit">Get Answer</button>
-                  
-              </form>
-              <div id="answerContainer" style="border:2.5px solid black; border-radius: 5px; margin-left: 25%; margin-right: 25%; margin: 10px;">
-                <p>Response:</p>
-                  <p id="answer"></p>
-              </div>
-            </div>
-            </div>
-
-            <div class="col-2"  ></div>
-        </div>
-        
-
-        <!-- view Asset Area-->
-        <div class="row align-items-start">
-            <div class="col-2"  ></div>
-
-            <div class="col-8" style="text-align: left;" >
-              <div style="padding:5px;">
-                <button  id = "retImages" type="button" class="btn btn-primary">Refresh Feed</button>
-              </div>
-
-              <div id="ImageList">
-
-
-              </div>
-            </div>
-
-            <div class="col-2"  ></div>
-        </div>
 
     </div>
-  
-  </body>
+
+
+
+    <!--New Asset Box-->
+    <div class="row align-items-start">
+      <div class="col-2"></div>
+
+      <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
+
+        <form style="font-size: 10pt;" id="newAssetForm">
+          <div class="mb-3">
+            <label for="FileName" class="form-label">File Name</label>
+            <input type="text" class="form-control" id="FileName">
+          </div>
+
+          <div class="mb-3">
+            <label for="restaurant" class="form-label">Where is the Restaurant?</label>
+            <input type="string" class="form-control" id="restaurant">
+          </div>
+
+          <div class="mb-3">
+            <label for="desc" class="form-label">Description of your Media</label>
+            <input type="string" class="form-control" id="desc">
+          </div>
+
+
+          <div class="mb-3">
+            <label for="docType">Choose an Upload Type:</label>
+
+            <select name="fileType" id="fileType">
+              <option value="img">Image</option>
+              <option value="vid">Video</option>
+              <option value="aud">Audio</option>
+            </select>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="userName">
+          </div>
+
+          <div class="mb-3">
+            <label for="UpFile" class="form-label">File to Upload</label>
+            <input type="file" class="form-control" id="UpFile">
+          </div>
+
+          <button type="button" id="subNewForm" class="btn btn-primary">Submit</button> <br /><br />
+
+        </form>
+        <hr style="text-align:center; border-width: 2.5px;">
+        <div class="QnA" style="text-align: center;">
+          <form id="questionForm">
+            <p>Question Bot</p>
+            <label for="questionInput"></label>
+            <input type="text" id="questionInput" placeholder="Ask a Question" required>
+            <button type="submit">Get Answer</button>
+
+          </form>
+          <div id="answerContainer"
+            style="border:2.5px solid black; border-radius: 5px; margin-left: 25%; margin-right: 25%; margin: 10px;">
+            <p>Response:</p>
+            <p id="answer"></p>
+          </div>
+        </div>
+
+        <div class="translate" style="text-align: center;">
+          <p>Translator</p>
+          <input type="text" id="textInput" placeholder="Translate Text">
+          <select id="languageSelect">
+            <option value="" disabled selected hidden>Select Language</option>
+            <option value="ga">Irish</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="ja">Japanese</option>
+          </select>
+          <button id="translateButton">Translate</button>
+          <div id="translatedContainer"
+            style="border:2.5px solid black; border-radius: 5px; margin-left: 25%; margin-right: 25%; margin: 10px;">
+            <p>Translated Text:
+            <p id="answer"></p>
+            <div id="translatedText"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="col-2"></div>
+    </div>
+
+
+    <!-- view Asset Area-->
+    <div class="row align-items-start">
+      <div class="col-2"></div>
+
+      <div class="col-8" style="text-align: left;">
+        <div style="padding:5px;">
+          <button id="retImages" type="button" class="btn btn-primary">Refresh Feed</button>
+        </div>
+
+        <div id="ImageList">
+
+
+        </div>
+      </div>
+
+      <div class="col-2"></div>
+    </div>
+
+  </div>
+
+</body>
+
 </html>

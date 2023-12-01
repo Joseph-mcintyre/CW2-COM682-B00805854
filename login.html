@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+
+    <title>Login Page</title>
+
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <script type="text/javascript" src="JS/bootstrap.js"></script>
+    <script type="text/javascript" src="JS/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="JS/app.js"></script>
+    
+  
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #f3f3f3;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+    <h3>Restaurants Around The World</h3>
+
+    
+    
+
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" id="loginButton">Log In</button>
+        </form>
+        &nbsp;
+        <button type="button" id="signUpButton">Sign Up</button>
+        &nbsp;
+        <button type="button" id="viewUsers">View Users</button>
+        &nbsp;
+        <button type="button" id="guestButton">Continue as Guest</button>
+        &nbsp;
+        
+        <div id="AllUsersList">
+        </div>
+        <div id="updateFormContainer" style="display: none;">
+            <form id="updateForm">
+                <input type="hidden" id="updateUserID">
+                <input type="text" id="updateUsername" placeholder="Username">
+                <input type="text" id="updateFirstName" placeholder="First Name">
+                <input type="text" id="updateLastName" placeholder="Last Name">
+                <input type="password" id="updatePassWord" placeholder="Password">
+                <button type="button" id="submitUpdate">Submit Update</button>
+            </form>
+        </div>
+        
+
+        <div style="padding:5px;">
+            <!-- <button  id = "retUsers" type="button" class="btn btn-primary">View Users</button> -->
+          </div>
+
+          <!-- Div that will show the user details, based on the username and password entered by the user, also gives option to delete -->
+          <!-- <div id="UsersList"> -->
+
+          </div>
+        &nbsp;
+
+        <div id="signUpForm" style="display: none;">
+            <div class="row align-items-start">
+                <div class="col-2"  ></div>
+    
+                <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
+                  <p>Add User</p>
+    
+                  <form style="font-size: 10pt;" id="newUserForm">
+                    <div class="mb-3">
+                      <label for="userName" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="userName">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="firstName" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="passWord" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="passWord">
+                    </div>                
+                    <button type="button" id="subNewUser" class="btn btn-primary">Submit</button> <br/><br/>
+                    
+
+
+                  </form>
+                </div>
+    
+                <div class="col-2"  ></div>
+            </div>
+        </div>
+    </div>
+    <div id="signUpFormContainer" style="display: none;">
+    </div>
+
+    
+</body>
+</html>
